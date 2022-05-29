@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+.logonav{
+  height: 80px;
+  width: 80px;
+}
+
+.nav-link{
+font-size: 25px;
+}
+.titulo{
+  display:flex ;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.introduccion{
+  margin-top: 50px;
+  margin-left: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: large;
+
+}
