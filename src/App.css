@@ -59,3 +59,22 @@ font-size: 25px;
   font-size: large;
 
 }
+
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-around ;
+  margin: 30px;
+  margin-top: 20px;
+}
+.cardItem{
+  margin: 30px;
+}
+.cardscontador{
+  border: solid 1px black;
+  height: 100px;
+  width: 200px;
+  margin: 30px;
+ align-items: center;
+ align-content: center;
+}
