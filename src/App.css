@@ -78,3 +78,11 @@ font-size: 25px;
  align-items: center;
  align-content: center;
 }
+.nav-a{ margin: 10px;}
+
+.cardjson{
+margin-left: 150px !important;
+border: solid 1px black;
+display: flex;
+justify-content: center;
+}

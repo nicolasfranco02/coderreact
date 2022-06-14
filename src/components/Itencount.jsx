@@ -1,25 +1,28 @@
 //import { SettingsCellOutlined } from '@mui/icons-material'
 import React, { useState } from 'react'
 
-const Itencount = ({inicial , max , onadd}) => {
-const[contador, setcontador]= useState(inicial)
+const Itencount = ({inicial , max , onAdd}) => {
+const [contador, setContador]= useState(inicial)
+const[stock, setStock]= useState(max)
 
 const sumar=()=>{
     if(contador < max){
-        setcontador (contador +1)
-    }else{
+        setContador (contador +1)
+    }
+    else{
         alert(`estas solicitando mas del stock disponible`)
     }
 }
 const restar=()=>{
    if(contador > inicial){
-    setcontador (contador -1)
+    setContador (contador -1)
     }else{
         alert (`no es un valor valido`)
     }
 }
+
 const reset =()=>{
-    setcontador(inicial)
+    setContador(inicial)
 }
 
   return (
@@ -27,7 +30,7 @@ const reset =()=>{
         <h2>{contador}</h2>
     <button onClick={sumar}>+</button>
     <button onClick={restar}>-</button>
-    <button onClick={()=> {onadd(contador) ; reset()}}>agregar</button>
+    <button onClick={()=> {onAdd(contador) ; reset()}}>agregar</button>
     </div>
   )
   }

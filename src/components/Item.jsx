@@ -22,4 +22,4 @@ const Item = ({listaProd}) => {
   )
   }
 
-export default Item
+export default Item;
