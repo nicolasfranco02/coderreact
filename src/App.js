@@ -1,13 +1,10 @@
-import logo from "./logo.svg";
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PNavBar from "./components/PNavBar";
-import CardWidget1 from "./components/CardWidget1";
-import ItemListContainer from "./components/ItemListContainer";
-import Itencount from "./components/Itencount";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import ItemDetail from "./components/ItemDetail";
 import ItemDetailContainer from "./components/ItemDetailContainer";
-import { Home } from "@mui/icons-material";
+import ItemListContainer from "./components/ItemListContainer";
+import PNavBar from "./components/PNavBar";
 //import { Home } from '@mui/icons-material';
 
 function App() {
@@ -16,19 +13,15 @@ function App() {
   };
   return (
     <>
-      {/* <BrowserRouter>
-   <PNavBar />
-   <ItemListContainer />
+       <BrowserRouter>
+   <PNavBar /> 
    <Routes>
-   <Route path="/" element={<inicio />} />
-   <Route path="/home" element={<inicio />} />
-   <Route path="/productos" element={< productos/>} />
-   <Route path="/serchProductos" element={< respuesta/>} />
-  </Routes>
-</BrowserRouter>*/}
+   <Route path="/" element={<ItemListContainer />} />
+   <Route path="/categoria/:id" element={<ItemListContainer />} />
+   <Route path="/item/:id" element={<ItemDetailContainer />} />
 
-      <PNavBar />
-      <ItemListContainer />
+  </Routes>
+</BrowserRouter>
     </>
   );
 }

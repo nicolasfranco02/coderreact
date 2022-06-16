@@ -1,6 +1,7 @@
 import React from 'react'
 import CartWidget1 from './CardWidget1';
-import {a} from 'react-router-dom';
+import {a, Link} from 'react-router-dom';
+import { ProdBuscador } from './ProdBuscador';
 
 function PNavBar() {
   return (
@@ -14,19 +15,35 @@ function PNavBar() {
         <div className="collapse container navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a  className="nav-a nav-link text-white-lg">inicio</a>
+              <Link  className="nav-a nav-link text-white-lg" to={"/"}>inicio</Link>
             </li>
             <li className="nav-item">
-              <a  className="nav-a nav-link text-white-lg">productos</a>
+              
+    <div className="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul className="navbar-nav">
+        <li className="nav-item dropdown">
+          <a className="nav-link nav-a nav-link text-white-lg dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            productos
+          </a>
+          <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><Link className="dropdown-item" to={"/categoria/tv"}>tv</Link></li>
+            <li><Link className="dropdown-item" to={"/categoria/informatica"}>informatica</Link></li>
+            <li><Link className="dropdown-item" to={"/categoria/ventilacion"}>ventilacion</Link></li>
+            <li><Link className="dropdown-item" to={"/categoria/hogar"}>hogar</Link></li>
+            <li><Link className="dropdown-item" to={"/categoria/heladera"}>heladera</Link></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
             </li>
             <li className="nav-item ">
-              <a  className="nav-a nav-link text-white-lg">destacados</a>
+              <a  className="nav-a nav-link text-white-lg" >destacados</a>
             </li>
             <li className="nav-item ">
-             <a className="nav-a nav-link text-white-lg">contacto</a>
+            {/*<ProdBuscador />*/}
             </li>
           </ul>
-          <div className="nav-item  offcanvas-end carrito " >
+          <div className="nav-item cardWidget offcanvas-end carrito " >
           <CartWidget1 />
           </div>
         </div>

@@ -1,4 +1,4 @@
 [
-    {"id":20 ,"nombre": "tv", "precio":55000, "imagen":"./imagenes/samsung-43.jpg" ,"pulgadas":43 , "marca":"samsung" ,
+    {"categoria":"tv", "id":20 ,"nombre": "tv", "precio":55000, "imagen":"./imagenes/samsung-43.jpg" ,"pulgadas":43 , "marca":"samsung" ,
     "origen": "argentina"}
 ]

@@ -1,10 +1,10 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
-import Itencount from './Itencount';
+
+import React, { useState } from 'react'
+import { Card, Modal} from 'react-bootstrap'
+
 
 const Item = ({listaProd}) => {
     const {nombre, imagen, precio}= listaProd ;
-
 
   return (
 
@@ -16,7 +16,7 @@ const Item = ({listaProd}) => {
     <Card.Text>
       precio:${precio}
     </Card.Text>
-    <button variant="primary">detalles</button>
+    <button variant="primary" >detalles</button>
   </Card.Body>
 </Card>
   )

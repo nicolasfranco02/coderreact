@@ -4,7 +4,7 @@ import ItemDetail from './ItemDetail';
 import Item from './Item';
 
 function ItemDetailContainer() {
-
+   
 const [resultados, setResultados]=useState([])
 
 useEffect(()=>{
@@ -16,6 +16,7 @@ useEffect(()=>{
             console.log(date)
 }) 
 .catch((error)=>console.log(error))
+
     },2000);
 },[])
 
@@ -24,6 +25,7 @@ useEffect(()=>{
   <>
 
   <div>
+    
         {resultados?.map(resultados=><ItemDetail key={resultados.id} resultados={resultados}/>)}
 
     </div>

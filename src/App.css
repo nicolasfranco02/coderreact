@@ -86,3 +86,7 @@ border: solid 1px black;
 display: flex;
 justify-content: center;
 }
+
+.cardWidget{
+  margin-left:50%;
+}
