@@ -1,7 +1,7 @@
-import { Tv } from '@mui/icons-material';
-import React, { useEffect, useInsertionEffect, useState } from 'react'
-import { Spinner } from 'react-bootstrap';
+
+import React, { useEffect, useInsertionEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import ItemDetail from './ItemDetail';
 import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList'
 
@@ -37,7 +37,7 @@ function ItemListContainer() {
 
    const listaProd = new Promise((res, rej) =>{
      setTimeout(()=>{
-      (!id)? res(productos) : res(productos.filter(prod=>prod.categoria == id))
+      (!id)? res(productos) : res(productos.filter(prod=>prod.categoria === id))
      },2000);
    }); 
 
@@ -66,7 +66,9 @@ setLoading(false)
       <div className='titulo'>
     <h2>producto</h2>
     </div>
+  <ItemDetailContainer />
       <ItemList listaProd={resultados} />
+      
     </div>
    
     </>

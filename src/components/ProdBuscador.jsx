@@ -1,9 +1,7 @@
-import { ImageNotSupportedSharp } from '@mui/icons-material';
 import React from 'react'
 import {useState} from 'react';
-import Item from './Item';
 import ItemDetailContainer from './ItemDetailContainer';
-import ItemList from './ItemList';
+
 
 export const ProdBuscador = ({productos}) => {
 

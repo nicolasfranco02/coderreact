@@ -1,21 +1,28 @@
 import React, { useState } from 'react'
 import {useEffect} from 'react';
 import ItemDetail from './ItemDetail';
-import Item from './Item';
+
 
 function ItemDetailContainer() {
-   
-const [resultados, setResultados]=useState([])
+const itemId = 20;
+const [items, setItem]=useState();
+const [isLoading, setIsLoading]=useState(true); 
 
 useEffect(()=>{
+    setIsLoading (true);
     setTimeout(()=>{
         fetch("./producto.json")
         .then((resul)=>resul.json())
-        .then((date)=>{
-            setResultados(date)
-            console.log(date)
+        .then((productos)=>{
+            const producto = productos.find((producto) => producto.id ===itemId);
+            setItem(producto);
+            setIsLoading(false);
+            console.log(productos);
 }) 
-.catch((error)=>console.log(error))
+.catch((error)=>{
+    console.log(error);
+    setIsLoading(false);
+});
 
     },2000);
 },[])
@@ -23,12 +30,12 @@ useEffect(()=>{
 
   return (
   <>
-
-  <div>
+{isLoading ?"cargando detalle..." : <ItemDetail key={items.id} items={items}/>}
+ {/* <div>
     
         {resultados?.map(resultados=><ItemDetail key={resultados.id} resultados={resultados}/>)}
 
-    </div>
+  </div>*/}
   
   
     

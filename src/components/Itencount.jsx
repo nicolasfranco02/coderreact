@@ -1,9 +1,11 @@
 //import { SettingsCellOutlined } from '@mui/icons-material'
 import React, { useState } from 'react'
 
-const Itencount = ({inicial , max , onAdd}) => {
+const Itencount = ({inicial , max, onAdd}) => {
 const [contador, setContador]= useState(inicial)
-const[stock, setStock]= useState(max)
+//const[stock, setStock]= useState(max)
+
+
 
 const sumar=()=>{
     if(contador < max){
