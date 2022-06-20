@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Card} from 'react-bootstrap';
 import ItemListContainer from './ItemListContainer';
 import Itencount from './Itencount';
+import {Link} from 'react-router-dom';
 
 
-const ItemDetail =({ items })=> {
-const { nombre, imagen,precio, marca,pulgadas,origen }= items ;
 
+const ItemDetail =({items})=> {
+const { nombre,stock, imagen,precio, marca,pulgadas,origen }= items ;
+
+const[cantidad,setCantidad]=useState ();
 const onAdd = (contador) => {
   alert(`agregaste ${contador} productos`);
+  setCantidad(contador);
 };
   return (
     <>
@@ -30,13 +34,17 @@ const onAdd = (contador) => {
     <Card.Text> 
     origen:{origen} <br />
      </Card.Text>
-   
-   <Itencount inicial={1} max={10} onAdd={onAdd}/>
+  {/* <Itencount inicial={1} max={10} onAdd={onAdd}/>*/}
   </Card.Body>
 </Card>
+{cantidad > 0 ? <Link to={'/Cart'} className="btn-fin">Terminar mi compra</Link>:<Itencount max={stock} inicial={1} onAdd={onAdd}/>} 
 
 
 </>
   )}
 
-export default ItemDetail
+  export default ItemDetail
+
+  
+  
+ 

@@ -45,6 +45,7 @@ function PNavBar() {
           </ul>
           <div className="nav-item cardWidget offcanvas-end carrito " >
           <CartWidget1 />
+          <span className='cart'>numero</span>
           </div>
         </div>
         

@@ -1,7 +1,6 @@
 
-import React, { useEffect, useInsertionEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemDetail from './ItemDetail';
 import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList'
 
@@ -35,7 +34,7 @@ function ItemListContainer() {
 
  useEffect(()=>{
 
-   const listaProd = new Promise((res, rej) =>{
+   const listaProd = new Promise((res,) =>{
      setTimeout(()=>{
       (!id)? res(productos) : res(productos.filter(prod=>prod.categoria === id))
      },2000);
@@ -51,7 +50,7 @@ setLoading(false)
   setresultado(error);
   setError(true)
 })
-})
+}, [id])
 
     return (
    <> 
@@ -66,9 +65,7 @@ setLoading(false)
       <div className='titulo'>
     <h2>producto</h2>
     </div>
-  <ItemDetailContainer />
       <ItemList listaProd={resultados} />
-      
     </div>
    
     </>

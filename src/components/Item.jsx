@@ -1,11 +1,14 @@
 
 import React, { useState } from 'react'
 import { Card, Modal} from 'react-bootstrap'
+import { Link } from 'react-router-dom';
+import Itencount from './Itencount';
 
 
 const Item = ({listaProd}) => {
-    const {nombre, imagen, precio}= listaProd ;
+    const {nombre,id, stock, imagen, precio}= listaProd ;
 
+   
   return (
 
 
@@ -16,10 +19,17 @@ const Item = ({listaProd}) => {
     <Card.Text>
       precio:${precio}
     </Card.Text>
-    <button variant="primary" >detalles</button>
+    <Card.Text>
+      cod:{id}
+    </Card.Text>
+   <Link to={'items/'+ id} className='btn' variant="primary" >detalles</ Link>
   </Card.Body>
 </Card>
   )
   }
 
 export default Item;
+
+
+
+
