@@ -6,19 +6,21 @@ import ItemDetail from './ItemDetail';
 
 
 function ItemDetailContainer() {
-const {id} = useParams();
-const [items, setItem]=useState([]);
+const idOp = 0;
+//const {id} = useState();
+const [items, setItem]=useState();
 const [isLoading, setIsLoading]=useState(true); 
 
-console.log(id)
+console.log()
 
 useEffect(()=>{
     setIsLoading (true);
     setTimeout(()=>{
-        fetch('../../producto.json')
-        .then((resul)=>resul.JSON())
+        fetch('../producto.json' )
+        .then((resul)=>resul.json())
         .then((productos)=>{
-            const producto = productos.find((producto) => producto.id ===id);
+            const producto = productos.find
+            ((producto) => producto.id ===idOp);
             setItem(producto);
             setIsLoading(false);
             console.log(productos);
@@ -29,7 +31,7 @@ useEffect(()=>{
 });
 
     },2000);
-},[id]);
+},[]);
 
 
 

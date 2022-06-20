@@ -1,6 +1,6 @@
 [
     {"categoria":"tv", "id":20 ,"nombre": "tv", "precio":55000, "imagen":"./imagenes/samsung-43.jpg" ,"pulgadas":43 , "marca":"samsung" ,
-    "origen": "argentina"},
+    "origen": "argentina", "stock":10},
     {"id":0 ,"categoria":"tv" , "stock":10, "nombre":"tv","precio": 50000, "imagen":"./imagenes/tv.jpg"},
   {"id":1 ,"categoria":"informatica" , "stock":10,"nombre":"notebook","precio": 72000, "imagen":"./imagenes/notebook.jpg"},
   {"id":2 ,"categoria":"ventilacion" , "stock":10,"nombre":"ventilador","precio": 1000,"imagen":"./imagenes/ventilador.jpg" },

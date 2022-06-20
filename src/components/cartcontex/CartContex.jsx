@@ -1,4 +1,4 @@
-{/*import { useState } from "react";
+import { useState } from "react";
 import { createContext } from "react";
 
 export const CartContex = createContext()
@@ -62,4 +62,4 @@ const getItemPrice =() =>{
     return <Provider value={{cart, isinCart, addIten,deleteItem,emptyCart,getItemPrice, getItemQty}}>{children}</Provider>
 }
 
-export default MyProvider*/}
+export default MyProvider

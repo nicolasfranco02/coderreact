@@ -27,10 +27,8 @@ let productos = [
 function ItemListContainer() {
   const[loading,  setLoading]= useState(true)
   const[error, setError]= useState(false)
-  
-
   const{id}= useParams();
- const [resultados, setresultado]=useState([])
+  const [resultados, setresultado]=useState([])
 
  useEffect(()=>{
 

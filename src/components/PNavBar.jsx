@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CartWidget1 from './CardWidget1';
 import {a, Link} from 'react-router-dom';
 import { ProdBuscador } from './ProdBuscador';
+import { CartContex } from './cartcontex/CartContex';
 
 function PNavBar() {
+
+  const {getItemQty} = useContext (CartContex)
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -45,7 +49,7 @@ function PNavBar() {
           </ul>
           <div className="nav-item cardWidget offcanvas-end carrito " >
           <CartWidget1 />
-          <span className='cart'>numero</span>
+          {getItemQty() > 0 && <span className="cantidadCompras">{getItemQty()}</span>}
           </div>
         </div>
         

@@ -1,35 +1,32 @@
-{/*import { Card } from "@mui/material";
+import { Card } from "@mui/material";
 import { useContext } from "react";
-import { CartContex } from "./CartContex";
+import { CartContex } from "./cartcontex/CartContex";
 import { IconName } from "react-icons/bi";
+import { Link } from "react-router-dom";
 
-function Cart() {
-//let[cart, getItemPrice]= useContext(CartContex);
-
+const Cart = () => {
+//const [cart, deleteItem, getItemQty, getItemPrice]= useContext(CartContex);
+//const { nombre, imagen,precio, contador }= items ;
 
 return(
 <>
+<h3>compra</h3>
 
-<div className="carritode">
-<h1>orden de compra</h1>
-<img src="{}" alt="" />
-<h2>1</h2>
-<h2>700</h2>
-
-<box-icon name="up-arrow" tipe="solid" >+</box-icon>
-<h3>cantidad</h3>
-<box-icon name="down-arrow" tipe="solid">-</box-icon><br />
-<box-icon name="trash">remove</box-icon>
-{/*<h2>{getItemPrice()}</h2>
-<h2>{cart}</h2>*/}
-
-{/*<div>
-    <h3>total: </h3>
-    <button className="btn">comprar</button>
+ 
+<div className="carritocompras">
+    <img src="{}" alt="" />
+    <p>producto {}</p>
+    <p>precio:{}</p>
+    <p>cantidad{} </p>
+   {/* <p onClick={() =>deleteItem(items.id)} className='eliminarItemCard'><img className='imgBasura img-fluid' src="{}" alt={"Producto1"} width="30px" /></p>
+    
+<p> total de productos :{getItemQty()}</p>
+<p>total a pagar : {getItemPrice()}</p>*/}
 </div>
-</div>
+<button className="btn"> finalizar compra</button>
+<Link to={"/"} className="btn" >agregar mas productos </Link>
 </>
 
 )
 }
-export default Cart;*/}
+export default Cart;
