@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import {useState, useContext} from 'react';
+import {CartContex} from './cartcontex/CartContex';
+//import Itencount from './Itencount';
+import {Link} from 'react-router-dom';
 
 
 
-const Itencount = ({inicial , max, onAdd}) => {
-const [contador, setContador]= useState(inicial)
-const[stock, setStock]= useState(max)
+const Itencount = ({items}) => {
+const [contador, setContador]= useState(1)
+const { agregarAlCArrito}=useContext(CartContex);
 
 
+const onAdd = ()=>{
+    agregarAlCArrito(items, contador);
+}
 
 const sumar=()=>{
-    if(contador < max){
+    if(contador < items.stock){
         setContador (contador +1)
     }
     else{
@@ -17,19 +23,17 @@ const sumar=()=>{
     }
 }
 const restar=()=>{
-   if(contador > inicial){
+   if(contador > 1){
     setContador (contador -1)
     }else{
         alert (`no es un valor valido`)
     }
 }
 
-const validarStock =()=>{
-    
-}
+
 
 const reset =()=>{
-    setContador(inicial)
+    setContador(1)
 }
 
   return (
@@ -37,8 +41,9 @@ const reset =()=>{
         <h2>{contador}</h2>
     <button onClick={sumar}>+</button>
     <button onClick={restar}>-</button>
-    <button onClick={()=> {onAdd(contador) ; reset()}}>agregar</button>
-    </div>
+    <button onClick={()=> {onAdd()}}>agregar al carro</button>
+    <Link to={'/Cart'} className="btn-fin">Terminar mi compra</Link> 
+    </div> 
   )
   }
 

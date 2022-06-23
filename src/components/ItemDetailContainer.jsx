@@ -1,17 +1,16 @@
-import React, { useState } from 'react'
-import {useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import ItemDetail from './ItemDetail';
 
 
 
 function ItemDetailContainer() {
+//const {itemId} = useParams([])
+const {itemId} = useState();
 const idOp = 0;
-//const {id} = useState();
+//const itemId= 1;
 const [items, setItem]=useState();
 const [isLoading, setIsLoading]=useState(true); 
 
-console.log()
 
 useEffect(()=>{
     setIsLoading (true);
@@ -19,11 +18,10 @@ useEffect(()=>{
         fetch('../producto.json' )
         .then((resul)=>resul.json())
         .then((productos)=>{
-            const producto = productos.find
-            ((producto) => producto.id ===idOp);
+            const producto = productos.find((producto) => producto.id ===idOp);
             setItem(producto);
             setIsLoading(false);
-            console.log(productos);
+            console.log(producto);
 }) 
 .catch((error)=>{
     console.log(error);
@@ -34,10 +32,12 @@ useEffect(()=>{
 },[]);
 
 
-
+console.log(idOp)
   return (
   <>
-{isLoading ?"cargando detalle..." : <ItemDetail   items={items}/>}
+    
+{isLoading ?"cargando detalle..." : <ItemDetail  items={items}/>}
+
  {/* <div>
     
         {resultados?.map(resultados=><ItemDetail key={resultados.id} resultados={resultados}/>)}

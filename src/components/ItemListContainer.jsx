@@ -30,7 +30,7 @@ function ItemListContainer() {
   const{id}= useParams();
   const [resultados, setresultado]=useState([])
 
- useEffect(()=>{
+{ useEffect(()=>{
 
    const listaProd = new Promise((res,) =>{
      setTimeout(()=>{
@@ -48,7 +48,7 @@ setLoading(false)
   setresultado(error);
   setError(true)
 })
-}, [id])
+}, [id])}
 
     return (
    <> 

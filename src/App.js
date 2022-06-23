@@ -13,18 +13,20 @@ function App() {
   
   return (
     <>
+    <div><MyProvider>
    <BrowserRouter>
-   <MyProvider>
+   
    <PNavBar />
-  
    <Routes>
    <Route path="/" element={<ItemListContainer />} />
    <Route path="/categoria/:id" element={<ItemListContainer />} />
    <Route path="/items/:id" element={<ItemDetailContainer />} />
    <Route path="/Cart" element={<Cart />}/>
    </Routes>
-  </MyProvider>
+  
 </BrowserRouter>
+</MyProvider>
+</div>
     </>
   );
 }
