@@ -19,14 +19,14 @@ return(
     <p>producto {items.nombre}</p>
     <p>precio:{items.precio}</p>
     <p>cantidad{items.contador} </p>
-    <button onClick={() => deleteItem(items.id)} className='eliminarItemCard'><img className='imgBasura img-fluid' src="{}" width="30px" /> borrar producto</button>
+    <button onClick={() => deleteItem(items.id)} className='btn btn-dark'> borrar producto</button>
     
 <p> total de productos :{getItemQty()}</p>
 <p>total a pagar : {getItemPrice()}</p>
 
 </div>))}
-<button className="btn"> finalizar compra</button>
-<Link to={"/"} className="btn" >agregar mas productos </Link>
+<button className="btn btn-dark"> finalizar compra</button>
+<Link to={"/"} className="btn btn-dark" >agregar mas productos </Link>
 </>
 
 )
