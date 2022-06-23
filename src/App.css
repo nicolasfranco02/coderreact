@@ -71,9 +71,8 @@ font-size: 25px;
   margin: 30px;
 }
 .cardscontador{
-  border: solid 1px black;
-  height: 100px;
-  width: 200px;
+ 
+  
   margin: 30px;
  align-items: center;
  align-content: center;
@@ -81,13 +80,29 @@ font-size: 25px;
 .nav-a{ margin: 10px;}
 
 .cardjson{
+  margin-top: 50px;
 margin-left: 150px !important;
 border: solid 1px black;
 display: flex;
 justify-content: center;
+height: auto;
+width: auto;
 }
 
 .cardWidget{
   margin-left:50%;
 }
 
+.sumas{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px;
+  align-items: center;
+}
+.cantidad{
+  margin: 15px;
+}
+.sum{
+  height: 40px;
+  width: 40px;
+}

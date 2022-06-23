@@ -18,7 +18,7 @@ return(
     <p>{}</p>
     <p>producto {items.nombre}</p>
     <p>precio:{items.precio}</p>
-    <p>cantidad{items.contador} </p>
+    <p>cantidad :{items.contador} </p>
     <button onClick={() => deleteItem(items.id)} className='btn btn-dark'> borrar producto</button>
     
 <p> total de productos :{getItemQty()}</p>

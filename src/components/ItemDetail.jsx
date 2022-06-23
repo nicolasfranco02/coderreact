@@ -15,7 +15,7 @@ const { addItem}= useContext(CartContex)
   return (
     <>
 
-<Card className=' cardjson 'style={{ width: '18rem' }}>
+<Card className=' cardjson 'style={{ width: '20rem' }}>
   <Card.Img variant="top" className='imagenJson' src={items.imagen} />
   <Card.Body >
     <Card.Title>{items.nombre}</Card.Title>
@@ -40,7 +40,7 @@ const { addItem}= useContext(CartContex)
    {/*<Itencount />*/}
   </Card.Body>
 
-{/*{cantidad > 0 ?*/ }<Link to={'/Cart'} className="btn-fin">Terminar mi compra</Link><Itencount items={items} /> 
+{/*{cantidad > 0 ?<Link to={'/Cart'} className="btn-fin">Terminar mi compra</Link>*/ }<Itencount items={items} /> 
 </Card>
 
 </>

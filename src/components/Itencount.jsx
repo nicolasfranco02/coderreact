@@ -38,11 +38,13 @@ const reset =()=>{
 
   return (
     <div className='cardscontador'>
-        <h2>{contador}</h2>
-    <button onClick={sumar}>+</button>
-    <button onClick={restar}>-</button>
-    <button onClick={()=> {onAdd()}}>agregar al carro</button>
-    <Link to={'/Cart'} className="btn-fin">Terminar mi compra</Link> 
+     <div className='sumas'>  
+    <button className=" btn sum btn-outline-dark" onClick={sumar}>+</button>
+    <h2 className='cantidad'>{contador}</h2>
+    <button className=" btn sum btn-outline-dark" onClick={restar}>-</button>
+    </div>
+    <button className=" btn btn-outline-dark" onClick={()=> {onAdd()}}>agregar al carro</button>
+    < Link to={'/Cart'} className="btn-outline-dark">Terminar mi compra</Link> 
     </div> 
   )
   }
