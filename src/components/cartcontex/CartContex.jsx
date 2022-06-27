@@ -13,7 +13,7 @@ const [cart , setCart]= useState ([])
 const isInCart =(id) =>{
     return cart.findIndex(items=>items.id=== id)
 }
-
+// itemDetail se encarga de agregar el prod selec al cxart sin pisar a los agregados, y si es duplicado, 
 const agregarAlCArrito=(item, contador)=>{
 console.log(item , contador)
 let posicion= isInCart(item.id)
@@ -32,31 +32,13 @@ useEffect(()=>{
 },[cart])
 
 
-// itemDetail se encarga de agregar el prod selec al cxart sin pisar a los agregados, y si es duplicado, 
-const addIten =(items, contador)=>{
-    const newItem ={
-        ...items,
-        contador
-       
-    } 
 
-    if (isInCart(newItem.id) ){
-        const findProduct = cart.find(x=> x.id === newItem.id)
-        const productIndex = cart.indexOf(findProduct)
-        const auxArray=[...cart]
-        auxArray[productIndex].contador +=contador;
-        setCart(auxArray)
 
-    }else {
-        setCart([...cart], newItem)
-    }
-    console.log();
-}
 
 
 //vaciar carrito en cart boton
 const emptyCart = () =>{
-    setCart([cart]);
+    setCart([]);
 }
 
 
@@ -79,7 +61,7 @@ const getItemPrice =() =>{
 }
 
 
-    return <Provider value={{cart,agregarAlCArrito, isInCart, addIten,deleteItem,emptyCart,getItemPrice, getItemQty}}>{children}</Provider>
+    return <Provider value={{cart,agregarAlCArrito, isInCart,deleteItem,emptyCart,getItemPrice, getItemQty}}>{children}</Provider>
 }
 
 export default MyProvider

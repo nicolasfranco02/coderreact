@@ -1,48 +1,49 @@
-import React, { useContext, useState } from 'react'
-import {Card} from 'react-bootstrap';
-import ItemListContainer from './ItemListContainer';
-import Itencount from './Itencount';
-import {Link} from 'react-router-dom';
+import { useContext } from 'react';
+import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { CartContex } from './cartcontex/CartContex';
+import Itencount from './Itencount';
 
-
-
-
-const ItemDetail =({items})=> {
-//const { nombre,stock, imagen,precio, marca,pulgadas,origen }=items;
-const { addItem}= useContext(CartContex)
-//const [articulosagregados , setarticulosagredos]=useState (0) 
+function ItemDetail ({items}) {
+const { nombre,stock, imagen,precio, descripcion,contador }=items;
+const { agregarAlCArrito, cart}= useContext(CartContex)
+ 
   return (
-    <>
-
-<Card className=' cardjson 'style={{ width: '20rem' }}>
-  <Card.Img variant="top" className='imagenJson' src={items.imagen} />
-  <Card.Body >
-    <Card.Title>{items.nombre}</Card.Title>
+    <>  
+<div className='tarjetaprod'>
+<Card className=' d-flex cardjson shadow-lg p-3 mb-5 bg-body rounded'style={{ width: '50rem' }}>
+  <Card.Img variant="top" className='imagenJson align-self-start' src={imagen} />
+  <div className='cardjsondetalles align-self-end  shadow p-3 mb-5 bg-body rounded'> 
+ <Card.Body className='cardbody' >
+    <Card.Title>{nombre}</Card.Title>
     <Card.Text>
-     precio:${items.precio} <br />
+     precio:  ${precio} <br />
     </Card.Text>
     <Card.Text> 
-     marca:{items.marca} <br />
+     marca:  <br />
     </Card.Text>
     <Card.Text> 
-     Pulgadas:{items.pulgadas} <br />
+     descripcion:{descripcion} <br />
     </Card.Text>
     <Card.Text> 
-    origen:{items.origen} <br />
+    origen:   <br />
      </Card.Text>
      <Card.Text> 
-    stock:{items.stock} <br />
+    stock:  {stock} <br />
      </Card.Text>
      <Card.Text> 
-    cantidad{items.contador} <br />
+    cantidad:  {contador} <br />
      </Card.Text>
-   {/*<Itencount />*/}
   </Card.Body>
+ 
+<div className='divcontador'>
+{contador > 0 ? <Link to={'/cart'} className="btn-fin">Terminar mi compra</Link>:<Itencount items={items} />}
 
-{/*{cantidad > 0 ?<Link to={'/Cart'} className="btn-fin">Terminar mi compra</Link>*/ }<Itencount items={items} /> 
+
+</div> 
+</div>
 </Card>
-
+</div>
 </>
   )}
 

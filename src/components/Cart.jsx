@@ -1,32 +1,45 @@
-import { Card } from "@mui/material";
 import { useContext } from "react";
-import { CartContex } from "./cartcontex/CartContex";
-import { IconName } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { CartContex } from "./cartcontex/CartContex";
+import CartDelete from "./CartDelete";
 
 const Cart = () => {
 const {cart,emptyCart, deleteItem, getItemQty, getItemPrice}= useContext(CartContex)
 
 
+
 return(
 <>
-<h3>compra</h3>
+<h3 className="titulo">articulos agregados</h3>
 
- {cart.map(items =>(
-<div className="carritocompras">
-    <img src="{}" alt="" />
-    <p>{}</p>
-    <p>producto {items.nombre}</p>
-    <p>precio:{items.precio}</p>
-    <p>cantidad :{items.contador} </p>
-    <button onClick={() => deleteItem(items.id)} className='btn btn-dark'> borrar producto</button>
+{getItemQty() > 0 ? <span>
+{cart.map(items =>(
+    <div className="cardjson cartult shadow-lg p-3 mb-5 bg-body rounded">
+<div className="carritocompras d-flex flex-row mb-3 ">
+    <img className="p-2 imgcart" src={items.imagen} alt="" />
+    <div className="p-2 prodpre" >
+    <h5>producto:  {items.nombre}</h5>
+    <h5>precio: ${items.precio}</h5>
     
-<p> total de productos :{getItemQty()}</p>
-<p>total a pagar : {getItemPrice()}</p>
+    </div>
+    <div className="p-2 delete">
+    <h5>cantidad :{items.contador} </h5>
+    <button onClick={() => deleteItem(items.id)} className='btn' ><CartDelete/> </button>
+    
+    </div>
+<button onClick={() => emptyCart()} className='btn vaciarCarrito' >vaciar carrito </button>
 
-</div>))}
-<button className="btn btn-dark"> finalizar compra</button>
-<Link to={"/"} className="btn btn-dark" >agregar mas productos </Link>
+</div>
+</div>
+))}
+
+<h4 className="botoneraCart"> total de productos :{getItemQty()}</h4><br />
+<h4 className="botoneraCart">total a pagar : {getItemPrice()}</h4> </span> :<h2 className="cardjson cartult shadow-lg p-3 mb-5 bg-body rounded">el carrito se encuentra vacio</h2>  }
+<div className="botonCart">
+{getItemQty() >0 ? <button className="btn btnCart btn-dark"> finalizar compra</button>: <span> </span>}
+<Link to={"/"} className="btn  btn-dark" >agregar mas productos </Link></div>
+
+
 </>
 
 )

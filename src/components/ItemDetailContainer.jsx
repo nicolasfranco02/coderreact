@@ -1,50 +1,60 @@
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 
 
-
 function ItemDetailContainer() {
-//const {itemId} = useParams([])
-const {itemId} = useState();
-const idOp = 0;
-//const itemId= 1;
+const {id} = useParams();
 const [items, setItem]=useState();
 const [isLoading, setIsLoading]=useState(true); 
-
+const[error, setError]= useState(false)
+const idOp = 0
 
 useEffect(()=>{
-    setIsLoading (true);
-    setTimeout(()=>{
-        fetch('../producto.json' )
-        .then((resul)=>resul.json())
-        .then((productos)=>{
-            const producto = productos.find((producto) => producto.id ===idOp);
-            setItem(producto);
-            setIsLoading(false);
-            console.log(producto);
+  setIsLoading (true);
+  setTimeout(()=>{
+      fetch('../producto.json' )
+      .then((resul)=>resul.json())
+      .then((productos)=>{
+          const producto = productos.find((producto) => producto.id ===idOp);
+          setItem(producto);
+          setIsLoading(false);
+          console.log(producto);
 }) 
 .catch((error)=>{
-    console.log(error);
-    setIsLoading(false);
+  console.log(error);
+  setIsLoading(false);
 });
 
-    },2000);
+  },2000);
 },[]);
 
-
-console.log(idOp)
+  {/*  const db = getFirestore();
+    const refProduct = doc(db , 'item', id);
+    setIsLoading (true);
+    getDoc(refProduct)
+      .then((snapshot) => {
+        setItems({ ...snapshot.data(), id: snapshot.id });
+        setIsLoading(false);
+        console.log(setItems)
+    })
+    .catch((error)=>{     
+      setError(error);
+    }).finally( ()=>{
+        setIsLoading(false);
+    })
+    
+},[id]);
+console.log(id)
+ console.log(setItems)
+console.log(items)*/}
   return (
   <>
-    
-{isLoading ?"cargando detalle..." : <ItemDetail  items={items}/>}
+ {/* {items && <ItemDetail items={items} />}*/}
+   
+{isLoading ?"cargando detalle..." : <ItemDetail items={items}/>}
 
- {/* <div>
-    
-        {resultados?.map(resultados=><ItemDetail key={resultados.id} resultados={resultados}/>)}
-
-  </div>
-  
-  */}
     
      
      </>

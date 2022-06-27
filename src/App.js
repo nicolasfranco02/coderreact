@@ -6,10 +6,23 @@ import MyProvider from "./components/cartcontex/CartContex";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer";
 import PNavBar from "./components/PNavBar";
-//import { Home } from '@mui/icons-material';
+import { initializeApp } from "firebase/app";
+
+
 
 
 function App() {
+  const firebaseConfig = {
+    apiKey: "AIzaSyCIQo0YEZfW9OOgJbB_Y9hVU-WKAUV1XUs",
+    authDomain: "ecomer-franco-gabriel.firebaseapp.com",
+    projectId: "ecomer-franco-gabriel",
+    storageBucket: "ecomer-franco-gabriel.appspot.com",
+    messagingSenderId: "132664936400",
+    appId: "1:132664936400:web:794b12cfc2b9c712499bd5"
+  };
+  
+  
+initializeApp(firebaseConfig);
   
   return (
     <>

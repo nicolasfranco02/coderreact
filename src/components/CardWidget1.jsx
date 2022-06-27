@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 
 function CardWidget1(items) {
 
-  //const {getItemQty}=  useContext(CartContex)
+  
 
   return (
     <><div> 

@@ -30,7 +30,7 @@ function PNavBar() {
             productos
           </a>
           <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><Link className="dropdown-item" to={"/categoria/tv"}>tv</Link></li>
+            <li><Link className="dropdown-item" to='categoria/tv'>tv</Link></li>
             <li><Link className="dropdown-item" to={"/categoria/informatica"}>informatica</Link></li>
             <li><Link className="dropdown-item" to={"/categoria/ventilacion"}>ventilacion</Link></li>
             <li><Link className="dropdown-item" to={"/categoria/hogar"}>hogar</Link></li>
@@ -48,8 +48,8 @@ function PNavBar() {
             </li>
           </ul>
           <div className="nav-item cardWidget offcanvas-end carrito " >
-          <CartWidget1 />
-          {getItemQty() > 0 && <span className="cantidadCompras">{getItemQty()}</span>}
+           <Link to={'/Cart'}> {getItemQty() > 0 && <span className="cantidadCompras">{getItemQty()}</span>}
+          <CartWidget1 /> </Link>
           </div>
         </div>
         
