@@ -167,6 +167,12 @@
 }
 .vaciarCarrito{
   display: flex;
-  justify-items: right;
+  justify-content: end;
+  align-items: flex-end;
+  margin-right: 30px;
   
+}
+
+.eliminaritems{
+  margin-left: 15px;
 }

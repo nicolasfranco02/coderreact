@@ -6,38 +6,20 @@ import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer() {
 const {id} = useParams();
-const [items, setItem]=useState();
+const [items, setItem]=useState({});
 const [isLoading, setIsLoading]=useState(true); 
 const[error, setError]= useState(false)
-const idOp = 0
+//const idOp = 0
 
 useEffect(()=>{
-  setIsLoading (true);
-  setTimeout(()=>{
-      fetch('../producto.json' )
-      .then((resul)=>resul.json())
-      .then((productos)=>{
-          const producto = productos.find((producto) => producto.id ===idOp);
-          setItem(producto);
-          setIsLoading(false);
-          console.log(producto);
-}) 
-.catch((error)=>{
-  console.log(error);
-  setIsLoading(false);
-});
-
-  },2000);
-},[]);
-
-  {/*  const db = getFirestore();
+    const db = getFirestore();
     const refProduct = doc(db , 'item', id);
     setIsLoading (true);
     getDoc(refProduct)
       .then((snapshot) => {
-        setItems({ ...snapshot.data(), id: snapshot.id });
+        setItem({ ...snapshot.data(), id: snapshot.id });
         setIsLoading(false);
-        console.log(setItems)
+        console.log(setItem)
     })
     .catch((error)=>{     
       setError(error);
@@ -47,13 +29,13 @@ useEffect(()=>{
     
 },[id]);
 console.log(id)
- console.log(setItems)
-console.log(items)*/}
+ console.log(setItem)
+console.log(items)
   return (
   <>
- {/* {items && <ItemDetail items={items} />}*/}
+{/*  {items && <ItemDetail items={items} />}*/}
    
-{isLoading ?"cargando detalle..." : <ItemDetail items={items}/>}
+  {isLoading ?"cargando detalle..." : <ItemDetail items={items}/>}
 
     
      

@@ -20,7 +20,7 @@ const Item = ({listaProd}) => {
     <Card.Text>
       cod:{id}
     </Card.Text>
-   <Link to={'/items/:'+ id} className=" btn btndetalles btn-outline-dark" variant="primary" >detalles</ Link>
+   <Link to={'/item/'+ id} className=" btn btndetalles btn-outline-dark" variant="primary" >detalles</ Link>
   </Card.Body>
 </Card>
   )

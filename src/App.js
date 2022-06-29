@@ -33,7 +33,7 @@ initializeApp(firebaseConfig);
    <Routes>
    <Route path="/" element={<ItemListContainer />} />
    <Route path="/categoria/:id" element={<ItemListContainer />} />
-   <Route path="/items/:id" element={<ItemDetailContainer />} />
+   <Route path="/item/:id" element={<ItemDetailContainer />} />
    <Route path="/Cart" element={<Cart />}/>
    </Routes>
   

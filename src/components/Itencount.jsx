@@ -6,16 +6,8 @@ import {Link} from 'react-router-dom';
 
 
 
-const Itencount = ({items}) => {
+const Itencount = ({items , onAdd}) => {
 const [contador, setContador]= useState(1)
-const { agregarAlCArrito, getItemQty}=useContext(CartContex);
-
-
-const onAdd = ()=>{
-    alert(`agregaste ${contador} al carrito de compras`)
-    agregarAlCArrito(items, contador);
-    
-}
 
 const sumar=()=>{
     if(contador < items.stock){
@@ -47,8 +39,14 @@ const reset =()=>{
     <button className=" btn sum btn-outline-dark" onClick={restar}>-</button>
     </div>
     <div className=''>
-   { contador > 0 ? <button className=" btn btncarro btn-outline-dark" onClick={()=> {onAdd()}}>agregar al carro</button>:<Link to={"/"} className="btn btn-dark" >agregar mas productos </Link>}
-    < Link to={'/Cart'} className="btn btncarro btn-outline-dark">Terminar mi compra</Link> 
+    <button
+          className=" btn btncarro btn-outline-dark"
+          onClick={() => {
+            onAdd(contador);
+          }}
+        >
+          agregar al carro
+        </button>
     </div>
     </div> 
   )

@@ -1,13 +1,20 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CartContex } from './cartcontex/CartContex';
 import Itencount from './Itencount';
 
-function ItemDetail ({items}) {
-const { nombre,stock, imagen,precio, descripcion,contador }=items;
-const { agregarAlCArrito, cart}= useContext(CartContex)
- 
+function ItemDetail({ items }) {
+  const { nombre, stock, imagen, precio, descripcion } = items;
+  const { agregarAlCArrito } = useContext(CartContex); 
+  const [showItemCount, setItemCount ] = useState(true);
+
+  const onAdd = (contador) => {
+    alert(`agregaste ${contador} al carrito de compras`);
+    setItemCount (false);
+    agregarAlCArrito(items, contador);
+  };
+
   return (
     <>  
 <div className='tarjetaprod'>
@@ -31,15 +38,17 @@ const { agregarAlCArrito, cart}= useContext(CartContex)
      <Card.Text> 
     stock:  {stock} <br />
      </Card.Text>
-     <Card.Text> 
-    cantidad:  {contador} <br />
-     </Card.Text>
   </Card.Body>
  
-<div className='divcontador'>
-{contador > 0 ? <Link to={'/cart'} className="btn-fin">Terminar mi compra</Link>:<Itencount items={items} />}
-
-
+  <div className="divcontador">
+              {showItemCount ? (
+                <Itencount items={items} onAdd={onAdd} />
+              ) : (
+                <Link to={"/cart"} className="btn btn-outline-dark">
+                  Terminar mi compra
+                </Link>
+              )}
+              <Link to={"/"} className="btn  btn-outline-dark" >agregar mas productos </Link>
 </div> 
 </div>
 </Card>

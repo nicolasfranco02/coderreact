@@ -11,7 +11,9 @@ const {cart,emptyCart, deleteItem, getItemQty, getItemPrice}= useContext(CartCon
 return(
 <>
 <h3 className="titulo">articulos agregados</h3>
-
+<div className=" vaciarCarrito">
+<button onClick={() => emptyCart()} className='btn btn-dark' >vaciar carrito </button>
+</div>
 {getItemQty() > 0 ? <span>
 {cart.map(items =>(
     <div className="cardjson cartult shadow-lg p-3 mb-5 bg-body rounded">
@@ -24,10 +26,9 @@ return(
     </div>
     <div className="p-2 delete">
     <h5>cantidad :{items.contador} </h5>
-    <button onClick={() => deleteItem(items.id)} className='btn' ><CartDelete/> </button>
+    <button onClick={() => deleteItem(items.id)} className='btn eliminaritems' ><CartDelete/> </button>
     
     </div>
-<button onClick={() => emptyCart()} className='btn vaciarCarrito' >vaciar carrito </button>
 
 </div>
 </div>
