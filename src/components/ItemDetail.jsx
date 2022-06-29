@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { CartContex } from './cartcontex/CartContex';
-import Itencount from './Itencount';
+import ItenCount from './ItenCount';
 
 function ItemDetail({ items }) {
   const { nombre, stock, imagen, precio, descripcion } = items;
@@ -42,7 +42,7 @@ function ItemDetail({ items }) {
  
   <div className="divcontador">
               {showItemCount ? (
-                <Itencount items={items} onAdd={onAdd} />
+                <ItenCount items={items} onAdd={onAdd} />
               ) : (
                 <Link to={"/cart"} className="btn btn-outline-dark">
                   Terminar mi compra

@@ -28,9 +28,7 @@ useEffect(()=>{
     })
     
 },[id]);
-console.log(id)
- console.log(setItem)
-console.log(items)
+
   return (
   <>
 {/*  {items && <ItemDetail items={items} />}*/}

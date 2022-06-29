@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import ItemDetailContainer from './ItemDetailContainer';
 import ItemList from './ItemList'
 import {collection , getDocs, getFirestore , query, where} from 'firebase/firestore';
 
@@ -10,7 +9,7 @@ function ItemListContainer() {
   const[loading,  setLoading]= useState(true)
   const[error, setError]= useState(false)
   const{id}= useParams();
-  const [resultados, setresultado]=useState([])
+  const [resultados, setResultado]=useState([])
 
 
  useEffect(()=>{
@@ -22,7 +21,7 @@ function ItemListContainer() {
     getDocs(q)
     .then((snapshot)=>{
       console.log(snapshot)
-      setresultado(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id })));
+      setResultado(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id })));
     })
      .catch((error)=>{
       setError(error)
@@ -33,7 +32,7 @@ function ItemListContainer() {
   }else{
   getDocs(prodColeccion)
   .then((snapshot)=>{
-    setresultado(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id })));
+    setResultado(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id })));
   })
    .catch((error)=>{
     setError(error)

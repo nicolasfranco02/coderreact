@@ -1,12 +1,10 @@
-import {useState, useContext} from 'react';
-import {CartContex} from './cartcontex/CartContex';
-//import Itencount from './Itencount';
-import {Link} from 'react-router-dom';
+import {useState} from 'react';
 
 
 
 
-const Itencount = ({items , onAdd}) => {
+
+const ItenCount = ({items , onAdd}) => {
 const [contador, setContador]= useState(1)
 
 const sumar=()=>{
@@ -52,5 +50,5 @@ const reset =()=>{
   )
   }
 
-export default Itencount;
+export default ItenCount;
 
