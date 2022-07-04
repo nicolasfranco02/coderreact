@@ -79,13 +79,14 @@
 }
 
 .cardjson {
-  margin-left: 5%;
-  margin-right: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
   align-items: center;
   margin-top: 50px;
   border: solid 1px black;
-  display: flex;
-  justify-content: center;
+ 
 }
 .cartult {
   display: flex;
@@ -175,4 +176,17 @@
 
 .eliminaritems{
   margin-left: 15px;
+}
+
+.formcheckOut{
+  margin: 10px;
+
+}
+.checkOut{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.btnCheck{
+  margin-left: 40px;
 }

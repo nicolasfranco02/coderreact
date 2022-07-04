@@ -37,7 +37,7 @@ return(
 <h4 className="botoneraCart"> total de productos :{getItemQty()}</h4><br />
 <h4 className="botoneraCart">total a pagar : {getItemPrice()}</h4> </span> :<h2 className="cardjson cartult shadow-lg p-3 mb-5 bg-body rounded">el carrito se encuentra vacio</h2>  }
 <div className="botonCart">
-{getItemQty() >0 ? <button className="btn btnCart btn-dark"> finalizar compra</button>: <span> </span>}
+{getItemQty() >0 ? <Link  to={"/CheckOut"} className="btn btnCart btn-dark" > finalizar compra</Link>: <span> </span>}
 <Link to={"/"} className="btn  btn-dark" >agregar mas productos </Link></div>
 
 

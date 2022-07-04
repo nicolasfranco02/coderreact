@@ -6,7 +6,7 @@ import {collection , getDocs, getFirestore , query, where} from 'firebase/firest
 
 
 function ItemListContainer() {
-  const[loading,  setLoading]= useState(true)
+  const[loading,  setLoading]= useState(false)
   const[error, setError]= useState(false)
   const{id}= useParams();
   const [resultados, setResultado]=useState([])
@@ -20,8 +20,8 @@ function ItemListContainer() {
     const q = query(prodColeccion , where('categoria','==',id));
     getDocs(q)
     .then((snapshot)=>{
-      console.log(snapshot)
       setResultado(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id })));
+     setLoading(true)
     })
      .catch((error)=>{
       setError(error)

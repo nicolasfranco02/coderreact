@@ -17,9 +17,6 @@ const Item = ({listaProd}) => {
     <Card.Text>
       precio:${precio}
     </Card.Text>
-    <Card.Text>
-      cod:{id}
-    </Card.Text>
    <Link to={'/item/'+ id} className=" btn btndetalles btn-outline-dark" variant="primary" >detalles</ Link>
   </Card.Body>
 </Card>
