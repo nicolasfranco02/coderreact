@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { CartContex } from './cartcontex/CartContex';
 import IconoError from './IconoError';
 import Validador from './Validador';
-
+ 
 
 function CheckOut() {
     const [nombre, setNombre] = useState("")

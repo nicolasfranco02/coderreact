@@ -23,7 +23,7 @@ return(
     <img className="p-2 imgcart" src={items.imagen} alt="" />
     <div className="p-2 prodpre" >
     <h5>producto:  {items.nombre}</h5>
-    <h5>precio: ${items.precio}</h5>
+    <h5>precio: ${items.precio}</h5> 
     
     </div>
     <div className="p-2 delete">

@@ -9,6 +9,8 @@ los id de los pedidos realizados al finalizar las compras.
 dato importante es que para finalizar la compra y te brinde el numero de pedido hay que completar todo el formulario final 
 una vez completado recien te brinda el boton de terminar la compra.
 
+el gif lo vas a encontrar en la carpeta imglogo.
+
 
 # Getting Started with Create React App
 
