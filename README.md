@@ -11,6 +11,8 @@ una vez completado recien te brinda el boton de terminar la compra.
 
 el gif lo vas a encontrar en la carpeta imglogo.
 
+para poder visualizar la pagina podes ingresar al siguiente link https://ecomer-franco-gabriel.web.app/
+
 
 # Getting Started with Create React App
 
