@@ -1,7 +1,9 @@
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
+
 
 
 function ItemDetailContainer() {
@@ -19,7 +21,7 @@ useEffect(()=>{
       .then((snapshot) => {
         setItem({ ...snapshot.data(), id: snapshot.id });
         setIsLoading(false);
-        console.log(setItem)
+
     })
     .catch((error)=>{     
       setError(error);
@@ -30,12 +32,13 @@ useEffect(()=>{
 },[id]);
 
   return (
+    
   <>
 {/*  {items && <ItemDetail items={items} />}*/}
    
-  {isLoading ?"cargando detalle..." : <ItemDetail items={items}/>}
+  {isLoading ? <div className='spinner titulo'><Spinner animation="grow" variant="primary"/></div>: <ItemDetail items={items}/>}
 
-    
+  
      
      </>
 );

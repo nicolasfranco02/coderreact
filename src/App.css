@@ -35,21 +35,61 @@
   to {
     transform: rotate(360deg);
   }
+
 }
+.footerCopy{
+  display: flex;
+  margin: auto;
+  color: aliceblue;
+  align-items:center ;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.modalcheck{
+  background-image:url('./imglogo/fondodepantalla.jpg') ;
+  color: aliceblue;
+
+}
+
+body{
+  background-image:url('./imglogo/fondodepantalla.jpg');
+}
+
+.spinner{
+  display: flex;
+  justify-content: center;
+}
+
+
 .logonav {
+  margin-left: 15px;
   height: 80px;
   width: 80px;
+  
+}
+
+
+.navPrincipal{
+  display: flex;
+  justify-content: center;
+  margin-left: 50%;
 }
 
 .nav-link {
   font-size: 25px;
+  margin: 22PX;
+  color: aliceblue;
+  
 }
+
+
 .titulo {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-top: 30px;
+  color: aliceblue;
 }
 
 .introduccion {
@@ -85,14 +125,11 @@
   margin: auto;
   align-items: center;
   margin-top: 50px;
-  border: solid 1px black;
+ 
+  
  
 }
-.cartult {
-  display: flex;
-  justify-content: space-around;
-  align-items: baseline;
-}
+
 .delete {
   display: flex;
   justify-content: space-around;
@@ -100,9 +137,25 @@
 }
 
 .divcontador {
-  height: 150px;
-  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
 }
+
+.btnITEMDetail{
+  margin-top: 69px;
+
+}
+.btndetalles{
+  display: flex;
+  justify-content: center;
+
+  width: 120px;
+  margin: auto;
+}
+
 .carritocompras {
   display: flex;
   flex-wrap: wrap;
@@ -117,18 +170,22 @@
 
 .cardWidget {
   margin-left: 50%;
+  margin-right: 20px;
 
 }
 .cantidadCompras {
   color: aliceblue;
   margin-left: 10px;
+  text-decoration: none;
+
 
 }
 .sumas {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+ 
+  
 }
 .cantidad {
   margin: 15px;
@@ -155,6 +212,7 @@
 .botoneraCart{
   display: flex;
   justify-content: center;
+  color: aliceblue;
 }
 
 .botonCart{
@@ -189,4 +247,58 @@ align-items: center;
 }
 .btnCheck{
   margin-left: 40px;
+}
+
+.imgValidador{
+  color: green;
+}
+.imgError{
+  color:red;
+}
+.cardWidget{
+  margin-right: 20px;
+}
+
+@media (max-width: 640px)  {
+  .cardWidget{
+    margin-left: 85%;
+   
+  }
+  .navPrincipal{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .btnITEMDetail{
+    margin-top: 61px;
+  }
+
+  .cartult{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .prodpre {
+    margin: auto;
+  }
+
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+  .prodpre {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+  .cardWidget{
+    margin-left: 93%;
+   
+  }
+  .btnITEMDetail{
+    margin-top: 63px;
+  }
+  .navPrincipal{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
 }

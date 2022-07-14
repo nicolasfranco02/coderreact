@@ -14,10 +14,12 @@ return(
 <div className=" vaciarCarrito">
 <button onClick={() => emptyCart()} className='btn btn-dark' >vaciar carrito </button>
 </div>
+
 {getItemQty() > 0 ? <span>
+    
 {cart.map(items =>(
     <div className="cardjson cartult shadow-lg p-3 mb-5 bg-body rounded">
-<div className="carritocompras d-flex flex-row mb-3 ">
+<div className="d-flex flex-row mb-3 ">
     <img className="p-2 imgcart" src={items.imagen} alt="" />
     <div className="p-2 prodpre" >
     <h5>producto:  {items.nombre}</h5>
@@ -29,13 +31,14 @@ return(
     <button onClick={() => deleteItem(items.id)} className='btn eliminaritems' ><CartDelete/> </button>
     
     </div>
+</div>
+</div>
 
-</div>
-</div>
+
 ))}
 
-<h4 className="botoneraCart"> total de productos :{getItemQty()}</h4><br />
-<h4 className="botoneraCart">total a pagar : {getItemPrice()}</h4> </span> :<h2 className="cardjson cartult shadow-lg p-3 mb-5 bg-body rounded">el carrito se encuentra vacio</h2>  }
+<h4 className="botoneraCart"> total de productos : {getItemQty()} </h4><br />
+<h4 className="botoneraCart">total a pagar : ${getItemPrice()}</h4> </span> :<h2 className="cardjson cartult shadow-lg p-3 mb-5 bg-body rounded">el carrito se encuentra vacio</h2>  }
 <div className="botonCart">
 {getItemQty() >0 ? <Link  to={"/CheckOut"} className="btn btnCart btn-dark" > finalizar compra</Link>: <span> </span>}
 <Link to={"/"} className="btn  btn-dark" >agregar mas productos </Link></div>

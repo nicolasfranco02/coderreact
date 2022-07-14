@@ -6,22 +6,25 @@ import ItenCount from './ItenCount';
 
 function ItemDetail({ items }) {
   const { nombre, stock, imagen, precio, descripcion } = items;
-  const { agregarAlCArrito } = useContext(CartContex); 
+  const { agregarAlCArrito, guardar } = useContext(CartContex); 
   const [showItemCount, setItemCount ] = useState(true);
 
-  const onAdd = (contador) => {
+
+  //agregar al carrito
+  const onAdd = (contador , Cart) => {
     alert(`agregaste ${contador} al carrito de compras`);
     setItemCount (false);
     agregarAlCArrito(items, contador);
   };
 
-  return (
+
+  return ( 
     <>  
-<div className='tarjetaprod'>
+<div className='d-flex tarjetaprod'>
 <Card className=' d-flex cardjson shadow-lg p-3 mb-5 bg-body rounded'style={{ width: '50rem' }}>
-  <Card.Img variant="top" className='imagenJson align-self-start' src={imagen} />
-  <div className='cardjsondetalles align-self-end  shadow p-3 mb-5 bg-body rounded'> 
- <Card.Body className='cardbody' >
+  <Card.Img variant="top" className=' align-self-start' src={imagen} />
+  <div className=' align-self-end  shadow p-3 mb-5 bg-body rounded'> 
+ <Card.Body className='' >
     <Card.Title>{nombre}</Card.Title>
     <Card.Text>
      precio:  ${precio} <br />
@@ -40,15 +43,15 @@ function ItemDetail({ items }) {
      </Card.Text>
   </Card.Body>
  
-  <div className="divcontador">
+  <div className="divcontador ">
               {showItemCount ? (
                 <ItenCount items={items} onAdd={onAdd} />
-              ) : (
-                <Link to={"/cart"} className="btn btn-outline-dark">
+              ) : (  
+                <Link to={"/cart"} className="btn btnITEMDetail  btn-outline-dark">
                   Terminar mi compra
                 </Link>
               )}
-              <Link to={"/"} className="btn  btn-outline-dark" >agregar mas productos </Link>
+              <Link to={"/"} className="btn btnITEMDetail btn-outline-dark" >agregar mas productos </Link>
 </div> 
 </div>
 </Card>

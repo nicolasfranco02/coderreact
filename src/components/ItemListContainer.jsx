@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from './ItemList'
 import {collection , getDocs, getFirestore , query, where} from 'firebase/firestore';
-
+import { Spinner } from 'react-bootstrap';
+// trae lista de productos
 
 function ItemListContainer() {
-  const[loading,  setLoading]= useState(false)
+  const[loading,  setLoading]= useState(true)
   const[error, setError]= useState(false)
   const{id}= useParams();
   const [resultados, setResultado]=useState([])
@@ -21,7 +22,7 @@ function ItemListContainer() {
     getDocs(q)
     .then((snapshot)=>{
       setResultado(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id })));
-     setLoading(true)
+     setLoading(false);
     })
      .catch((error)=>{
       setError(error)
@@ -33,10 +34,11 @@ function ItemListContainer() {
   getDocs(prodColeccion)
   .then((snapshot)=>{
     setResultado(snapshot.docs.map((doc)=>({...doc.data(), id: doc.id })));
+    setLoading(false);
   })
    .catch((error)=>{
     setError(error)
-      setLoading(false)
+      
   })
   }
 }, [id])
@@ -44,17 +46,16 @@ function ItemListContainer() {
 
     return (
    <> 
-   <div>{loading && "loading..."}</div>
-   <div>{error && "hubo un error..."}</div>
+   
+   
+
     <div className='titulo'>
-    <h1>nombre comercio</h1>
+    <h1>ecommer</h1>
     </div>
+    <div className='spinner titulo'>{loading && <Spinner animation="grow" variant="primary" />}</div>
     <div>
     <div className='titulo'>
       </div>
-      <div className='titulo'>
-    <h2>producto</h2>
-    </div>
       <ItemList listaProd={resultados} />
     </div>
    

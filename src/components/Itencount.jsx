@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 const ItenCount = ({items , onAdd}) => {
 const [contador, setContador]= useState(1)
-
+// contador de suma
 const sumar=()=>{
     if(contador < items.stock){
         setContador (contador +1)
@@ -15,6 +15,8 @@ const sumar=()=>{
         alert(`estas solicitando mas del stock disponible`)
     }
 }
+
+// contador de resta
 const restar=()=>{
    if(contador > 1){
     setContador (contador -1)

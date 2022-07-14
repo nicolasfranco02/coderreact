@@ -1,3 +1,15 @@
+
+-------------------------------------------------Franco Gabriel---------------------------------------------------------------
+
+el proyecto es un ecommer como se ve, para iniciarlo desde visual estudio hay que ejecutar en la terminal el comando npm start
+se utilizaron como librerias principales boostrap y react-boostrap
+se intalo tambien react-router-dom para poder linkear la pagina
+cuenta con el servidor de firebase en donde se encuentran almacenadas las imagenes con sus detalles,  y ahi mismo guarda
+los id de los pedidos realizados al finalizar las compras. 
+dato importante es que para finalizar la compra y te brinde el numero de pedido hay que completar todo el formulario final 
+una vez completado recien te brinda el boton de terminar la compra.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +80,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+

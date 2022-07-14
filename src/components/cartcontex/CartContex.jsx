@@ -7,7 +7,15 @@ export const CartContex = createContext()
 const {Provider} = CartContex;
 
 const MyProvider = ({children})=>{
-const [cart , setCart]= useState ([])
+//guardar en localstorage
+
+const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')) ?? [])
+
+    useEffect(() => 
+    {
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+    }, [cart]);
 
 //metodo some (true o false) ItemDetail- se encarga si hay un prodcto a agregar ya esta o no en el carro
 const isInCart =(id) =>{
@@ -15,9 +23,9 @@ const isInCart =(id) =>{
 }
 // itemDetail se encarga de agregar el prod selec al cxart sin pisar a los agregados, y si es duplicado, 
 const agregarAlCArrito=(item, contador)=>{
-console.log(item , contador)
+
 let posicion= isInCart(item.id)
-console.log(posicion);
+
 if (posicion ==-1){
     setCart([...cart,{...item,contador:contador}])
 }else{
@@ -28,7 +36,7 @@ if (posicion ==-1){
 
 }
 useEffect(()=>{
-    console.log(cart)
+    
 },[cart])
 
 
@@ -59,6 +67,7 @@ const getItemPrice =() =>{
 
     return cart.reduce((acc , items)=>acc += items.contador * items.precio, 0)
 }
+
 
 
     return <Provider value={{cart,agregarAlCArrito, isInCart,deleteItem,emptyCart,getItemPrice, getItemQty}}>{children}</Provider>
